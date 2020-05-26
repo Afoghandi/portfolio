@@ -1,7 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class Title extends Component {
-	render() {
-		return <div>hello from title</div>;
-	}
+export default function Title({ title }) {
+	return (
+		<section className="container">
+			<div className="section-title">
+				<h4>{title}</h4>
+			</div>
+			<div className="seperator">
+				<div className="line"></div>
+			</div>
+		</section>
+	);
 }

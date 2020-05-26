@@ -15,13 +15,11 @@ function App() {
 		<div>
 			<NavBar />
 			<Switch>
-				<Route exact path="/" component={home} />
-				<Route exact path="/about/" component={about} />
-				<Route exact path="/project/" component={project} />
-				<Route exact path="/contact/" component={contact} />
-				<Route component={error} />
-			</Switch>
-			<Footer />
+				<Route exact path="/" component={home} />{" "}
+				<Route exact path="/project/" component={project} />{" "}
+				<Route exact path="/contact/" component={contact} />{" "}
+				<Route component={error} />{" "}
+			</Switch>{" "}
 		</div>
 	);
 }
