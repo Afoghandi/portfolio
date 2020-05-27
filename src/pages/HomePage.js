@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import About from "./About";
 import Model from "../images/face.png";
 import Hero from "../components/Hero";
+import Project from "../components/project/project";
 
 export default class HomePage extends Component {
 	render() {
@@ -16,6 +17,7 @@ export default class HomePage extends Component {
 				/>
 
 				<About />
+				<Project />
 			</div>
 		);
 	}

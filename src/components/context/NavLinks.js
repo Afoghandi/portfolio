@@ -1,23 +1,21 @@
-const NavLink = [{
+export const NavLink = [{
         id: 1,
-        name: 'home',
-        path: '/',
-
+        name: "home",
+        path: "/",
     },
     {
         id: 2,
-        name: 'about',
-        path: '/about',
+        name: "about",
+        path: "/about",
     },
     {
         id: 3,
-        name: 'projects',
-        path: '/project',
+        name: "projects",
+        path: "/project",
     },
     {
         id: 4,
-        name: 'contact',
-        path: '/contact',
+        name: "contact",
+        path: "/contact",
     },
-]
-export default NavLink;
+];

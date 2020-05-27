@@ -2,14 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+import { ProjectProvider } from "./components/context";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Route } from "react-router-dom";
 
 ReactDOM.render(
-	<Route>
-		<App />
-	</Route>,
-
+	<ProjectProvider>
+		<Route>
+			<App />
+		</Route>{" "}
+	</ProjectProvider>,
 	document.getElementById("root")
 );
 
