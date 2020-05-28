@@ -81,6 +81,7 @@ export const items = [{
             gitHub: "https://github.com/Afoghandi/budget-calculator.git",
             liveDemo: "https://city-tours-firstever.netlify.app",
             image: { fields: { file: { url: defaultCover } } },
+            payment: false,
         },
     },
     {
@@ -93,6 +94,7 @@ export const items = [{
             liveDemo: "https://www.imamtravels.com",
             gitHub: "https://github.com/Afoghandi/imam-travels.git",
             image: { fields: { file: { url: imam } } },
+            payment: false,
         },
     },
     {

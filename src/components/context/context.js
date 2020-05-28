@@ -28,20 +28,57 @@ class ProjectProvider extends Component {
 			let project = { id, ...item.fields, image };
 			return project;
 		});
-		// filter through product and find featured
-		let featuredProject = allProjects.filter((item) => item.featured === true);
 
 		this.setState({
 			allProjects,
 
-			featuredProject,
-
 			filteredProjects: allProjects,
 		});
 	};
+
+	handleChange = (e) => {
+		const name = e.target.name;
+		const value =
+			e.target.type === "checkbox" ? e.target.checked : e.target.value;
+		this.setState(
+			{
+				[name]: value,
+			},
+			this.sortProjects
+		);
+	};
+	sortProjects = () => {
+		const { type, allProjects, search, payment } = this.state;
+		let tempProject = [...allProjects];
+
+		if (payment) {
+			tempProject = tempProject.filter((item) => item.payment === true);
+		}
+		if (type !== "all") {
+			tempProject = tempProject.filter((item) => item.type === type);
+		}
+		if (search.length > 0) {
+			tempProject = tempProject.filter((item) => {
+				//in case users uses caps lock
+				let tempSearch = search.toLowerCase();
+				//start search by first letter till the full length
+				let tempTitle = item.style.toLowerCase().slice(0, search.length);
+				if (tempSearch === tempTitle) {
+					return item;
+				}
+			});
+		}
+
+		this.setState({
+			filteredProjects: tempProject,
+		});
+	};
+
 	render() {
 		return (
-			<ProjectContext.Provider value={{ ...this.state }}>
+			<ProjectContext.Provider
+				value={{ ...this.state, handleChange: this.handleChange }}
+			>
 				{this.props.children}
 			</ProjectContext.Provider>
 		);
