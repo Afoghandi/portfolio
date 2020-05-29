@@ -27,7 +27,6 @@ function About() {
 							and helping the organisation to achieve their goals.
 							<br />
 							Have a look at my personality test result.
-							<div></div>
 							<br />
 							<a href="https://www.16personalities.com/profiles/126599aebf4b0">
 								{" "}

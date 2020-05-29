@@ -58,7 +58,7 @@ export const items = [{
             classComponent: false,
             functionComponent: true,
             hooks: false,
-            api: false,
+            api: true,
             redux: false,
             MongoDbi: false,
         },

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { SocialLinks } from "./SocialLinks";
 import { NavLink } from "./NavLinks";
-import { items } from "./Data";
+//import { items } from "./Data";
+import { client } from "./contentful";
 
 const ProjectContext = React.createContext();
 
@@ -24,10 +25,16 @@ class ProjectProvider extends Component {
 	};
 
 	componentDidMount() {
-		this.setProjects(items);
+		//this.setProjects();
+		client
+			.getEntries({
+				content_type: "portfolio",
+			})
+			.then((response) => this.setProjects(response.items))
+			.catch(console.error);
 	}
 	setProjects = (projects) => {
-		//store all products in variable
+		//store all projects in variable
 		let allProjects = projects.map((item) => {
 			let { id } = item.sys;
 			let image = item.fields.image.fields.file.url;
