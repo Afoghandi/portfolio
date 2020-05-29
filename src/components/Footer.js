@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { ProjectConsumer } from "./context";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelopeOpen } from "react-icons/fa";
 
@@ -13,11 +13,10 @@ export default function Footer() {
 							<div className="left box">
 								<div className="content">
 									<p>
-										Lorem ipsum dolor, sit amet consectetur adipisicing
-										elit.Delectus, quam.Sit accusantium rerum iure impedit
-										fugiat!Nihil quaerat illo voluptates vitae molestias, rerum
-										numquam necessitatibus. Perferendis aut voluptas consectetur
-										eligendi.{" "}
+										I am a software developer and designer living in England.
+										currently, I work in the insurance industry. I work in the
+										Learning and Development department, designing new ways to
+										learn and helping the organisation to achieve their goals
 									</p>
 
 									<div className="social">
@@ -57,7 +56,10 @@ export default function Footer() {
 							<div className="right box">
 								<h2>Contact me</h2>
 								<div className="content">
-									<form action="#">
+									<form
+										action="https://formspree.io/ralphaeloshun@gmail.com"
+										method="POST"
+									>
 										<div className="email">
 											<div className="text">Email*</div>
 											<input
@@ -76,7 +78,14 @@ export default function Footer() {
 											></textarea>
 										</div>
 										<div className="btn">
-											<button className="btnPrimaryLight"> send </button>
+											<button
+												className="btnPrimaryLight"
+												type="submit"
+												value="Send"
+											>
+												{" "}
+												send{" "}
+											</button>
 										</div>
 									</form>
 								</div>

@@ -18,13 +18,23 @@ function About() {
 				</span>
 				<div className="about-text-container">
 					<div className="about-text">
-						<p className="about-header"> Designer and developer </p>
+						<p className="about-header"> Hello there </p>
 						<p className="about-wording">
 							{" "}
-							Lorem ipsum dolor sit amet consectetur adipisicing
-							elit.Dignissimos nemo adipisci amet delectus magni, cupiditate
-							quibusdam aliquam placeat consectetur id sed molestias in aut
-							ipsam numquam cum!Aperiam, veritatis dicta!
+							I am a software developer and designer living in England.
+							currently, I work in the insurance industry. I work in the
+							Learning and Development department, designing new ways to learn
+							and helping the organisation to achieve their goals.
+							<br />
+							Have a look at my personality test result.
+							<div></div>
+							<br />
+							<a href="https://www.16personalities.com/profiles/126599aebf4b0">
+								{" "}
+								<button type="button" className="btnPrimaryDark">
+									Go
+								</button>{" "}
+							</a>{" "}
 						</p>{" "}
 					</div>{" "}
 				</div>{" "}

@@ -12,18 +12,18 @@ export default function () {
 
 				return (
 					<section className="container">
-						Total:{filteredProjects.length}
-						<Title title="projects" />
+						<Title title={`total projects: ${filteredProjects.length} `} />{" "}
 						<FilterProjects />
 						<div className="grid-container">
+							{" "}
 							{filteredProjects.length === 0 ? (
-								<h1> Sorry no items match your search</h1>
+								<h1> Sorry no items match your search </h1>
 							) : (
 								filteredProjects.map((item) => (
 									<ProjectDisplay key={item.id} project={item} />
 								))
-							)}
-						</div>
+							)}{" "}
+						</div>{" "}
 					</section>
 				);
 			}}

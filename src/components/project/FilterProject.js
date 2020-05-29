@@ -9,7 +9,7 @@ export default function FilterProject() {
 					allProjects,
 					handleChange,
 					type,
-					style,
+
 					payment,
 					classComponent,
 					functionComponent,
@@ -28,7 +28,7 @@ export default function FilterProject() {
 					<div className="container">
 						<div className="filter-container">
 							<div>
-								<label htmlFor="type">Type</label>
+								<label htmlFor="type"> Type </label>{" "}
 								<select
 									name="type"
 									id="type"
@@ -39,65 +39,68 @@ export default function FilterProject() {
 									{types.map((type, id) => {
 										return (
 											<option key={id} value={type}>
-												{type}{" "}
+												{type}
 											</option>
 										);
 									})}
 								</select>
-							</div>
+							</div>{" "}
 							<div className="checkbox">
-								<label htmlFor="payment">payment option</label>
+								<label htmlFor="payment"> payment option </label>{" "}
 								<input
 									type="checkbox"
 									name="payment"
 									onChange={handleChange}
 									checked={payment && true}
 									id="payment"
-								></input>
-								<label htmlFor="classComponent">class component</label>
+								></input>{" "}
+								<label htmlFor="classComponent"> class component </label>{" "}
 								<input
 									type="checkbox"
 									name="classComponent"
 									onChange={handleChange}
 									checked={classComponent && true}
 									id="classComponent"
-								></input>
+								></input>{" "}
 								<br />
-								<label htmlFor="functionComponent">functional component</label>
+								<label htmlFor="functionComponent">
+									{" "}
+									functional component{" "}
+								</label>{" "}
 								<input
 									type="checkbox"
 									name="functionComponent"
 									onChange={handleChange}
 									checked={functionComponent && true}
 									id="functionComponent"
-								></input>
-								<label htmlFor="hooks">hooks</label>
+								></input>{" "}
+								<label htmlFor="hooks"> hooks </label>{" "}
 								<input
 									type="checkbox"
 									name="hooks"
 									onChange={handleChange}
 									checked={hooks && true}
 									id="hooks"
-								></input>
+								></input>{" "}
 								<br />
-								<label htmlFor="api">api</label>
+								<label htmlFor="api"> api </label>{" "}
 								<input
 									type="checkbox"
 									name="api"
 									onChange={handleChange}
 									checked={api && true}
 									id="api"
-								></input>
-								<label htmlFor="redux">redux</label>
+								></input>{" "}
+								<label htmlFor="redux"> redux </label>{" "}
 								<input
 									type="checkbox"
 									name="redux"
 									onChange={handleChange}
 									checked={redux && true}
 									id="redux"
-								></input>
+								></input>{" "}
 								<br />
-								<label htmlFor="MongoDbi">MongoDbi</label>
+								<label htmlFor="MongoDbi"> MongoDbi </label>{" "}
 								<input
 									type="checkbox"
 									name="MongoDbi"

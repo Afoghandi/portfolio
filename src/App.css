@@ -628,7 +628,7 @@ nav {
 /******* filter page ***************/
 
 .filter-container {
-    width: 50%;
+    width: 75%;
     height: 20vh;
     background-color: var(--mainFontColorDark);
     display: flex;
@@ -759,6 +759,115 @@ label {
 /**************************************/
 
 
+/**** contact page *****/
+
+.contact-section {
+    background-size: cover;
+    background-position: center;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 2%;
+}
+
+.main-container {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+    padding-top: 150px;
+    background-color: var(--mainWhite);
+    box-shadow: var(--darkShadow);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 55px;
+}
+
+.contact-form {
+    display: grid;
+    grid-template-columns: auto;
+    margin: auto;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.contact-form h2 {
+    text-align: center;
+    text-decoration: underline;
+    text-underline-position: under;
+    color: rgb(10, 10, 10);
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    padding-bottom: 10px;
+}
+
+.form-info {
+    font-size: 16px;
+    font-style: italic;
+    color: var(--mainFontColorDark);
+    letter-spacing: 2px;
+    margin-left: 5%;
+    margin-top: 50px;
+    padding-top: 20px;
+}
+
+.input {
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(136, 133, 133, 0.5);
+    color: #fff;
+    border: none;
+    outline: none;
+    width: 70%;
+    font-size: 20px;
+}
+
+.input::placeholder {
+    color: #fff;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+textarea {
+    padding: 10px;
+    margin: 10px;
+    width: 70%;
+    background-color: rgba(136, 133, 133, 0.5);
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 20px;
+}
+
+textarea::placeholder {
+    color: #fff;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.submit {
+    width: 40%;
+    background: none;
+    padding: 4px;
+    outline: none;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    height: 33px;
+    text-align: center;
+    cursor: pointer;
+    letter-spacing: 2px;
+    border: 2px solid var(--mainFontColorDark);
+    color: var(--darkGrey);
+    border-radius: 50px;
+}
+
+.submit:hover {
+    border: 1px solid rgb(255, 7, 110);
+    color: rgb(255, 7, 110);
+    cursor: pointer;
+}
+
+
 /***** Footer ***************/
 
 footer {
@@ -866,64 +975,3 @@ footer {
 .input-text .textarea-text:focus {
     outline: #3498db;
 }
-
-
-/*
-        @media screen and (max-width:1348px) {
-            .text-container {
-                position: absolute;
-                width: 90%;
-                top: 10%;
-            }
-            .media-left {
-                width: 60%;
-            }
-            .media-right {
-                width: 40%;
-            }
-            .model {
-                height: 370px;
-                position: absolute;
-                left: 90%;
-                bottom: 0px;
-            }
-        }
-        
-        @media screen and (max-width:768px) {
-            .text-container {
-                position: absolute;
-                width: 80%;
-                top: 7%;
-                left: 0%;
-                padding-left: 35px;
-                padding-bottom: 10px;
-            }
-            .media-left {
-                width: 80%;
-                left: 0%;
-            }
-            .highlight {
-                font-size: 20px;
-            }
-            .title-name {
-                font-size: 40px;
-            }
-            .skills {
-                font-size: 20px;
-                line-height: 30px;
-                margin-bottom: 10px;
-            }
-            .media-right {
-                width: 40%;
-            }
-            .model {
-                height: 370px;
-                position: relative;
-                left: 100%;
-                bottom: 0px;
-                padding-left: 200px;
-            }
-            .btnPrimaryLight {
-                margin-bottom: 10px;
-            }
-        }*/
