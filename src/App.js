@@ -16,7 +16,8 @@ function App() {
 			<NavBar />
 			<Switch>
 				<Route exact path="/" component={home} />{" "}
-				<Route exact path="/project/" component={Project} />{" "}
+				<Route exact path="/project/" component={Project} />
+				<Route exact path="/about/" component={about} />{" "}
 				<Route exact path="/contact/" component={contact} />{" "}
 				<Route component={error} />{" "}
 			</Switch>{" "}

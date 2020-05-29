@@ -15,6 +15,12 @@ class ProjectProvider extends Component {
 		type: "all",
 		search: "",
 		payment: false,
+		classComponent: false,
+		functionComponent: false,
+		hooks: false,
+		api: false,
+		redux: false,
+		MongoDbi: false,
 	};
 
 	componentDidMount() {
@@ -48,25 +54,56 @@ class ProjectProvider extends Component {
 		);
 	};
 	sortProjects = () => {
-		const { type, allProjects, search, payment } = this.state;
+		const {
+			type,
+			allProjects,
+
+			payment,
+			classComponent,
+			functionComponent,
+			hooks,
+			api,
+			redux,
+			MongoDbi,
+		} = this.state;
 		let tempProject = [...allProjects];
+
+		//check payment check box
 
 		if (payment) {
 			tempProject = tempProject.filter((item) => item.payment === true);
 		}
+		//check class component check box
+		if (classComponent) {
+			tempProject = tempProject.filter((item) => item.classComponent === true);
+		}
+
+		// check function component checkbox
+
+		if (functionComponent) {
+			tempProject = tempProject.filter(
+				(item) => item.functionComponent === true
+			);
+		}
+		//check hooks component checkbox
+		if (hooks) {
+			tempProject = tempProject.filter((item) => item.hooks === true);
+		}
+		//check api component checkbox
+		if (api) {
+			tempProject = tempProject.filter((item) => item.api === true);
+		}
+		//check mongo component checkbox
+		if (MongoDbi) {
+			tempProject = tempProject.filter((item) => item.MongoDbi === true);
+		}
+		//check redux component checkbox
+		if (redux) {
+			tempProject = tempProject.filter((item) => item.redux === true);
+		}
+		//check drop function
 		if (type !== "all") {
 			tempProject = tempProject.filter((item) => item.type === type);
-		}
-		if (search.length > 0) {
-			tempProject = tempProject.filter((item) => {
-				//in case users uses caps lock
-				let tempSearch = search.toLowerCase();
-				//start search by first letter till the full length
-				let tempTitle = item.style.toLowerCase().slice(0, search.length);
-				if (tempSearch === tempTitle) {
-					return item;
-				}
-			});
 		}
 
 		this.setState({

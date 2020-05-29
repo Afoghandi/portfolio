@@ -1,5 +1,6 @@
 import React from "react";
-import Model from "../images/face.png";
+
+import "aos/dist/aos";
 
 export default function Hero({ highlight, name, skills, img, children }) {
 	return (
@@ -8,20 +9,20 @@ export default function Hero({ highlight, name, skills, img, children }) {
 				<div className="hero-container">
 					<div className="provider">
 						<div className="text-container">
-							<h2 className="highlights">{highlight}</h2>
-							<h1 className="title-name">{name} </h1>
+							<h2 className="highlights"> {highlight} </h2>{" "}
+							<h1 className="title-name"> {name} </h1>{" "}
 							<h5 className="skills ">
-								{skills}
-								<br /> | PhotoShop | MongoDB{" "}
-							</h5>
-							<button className="btnPrimaryLight">{children}</button>
-						</div>
-						<div className="img-container">
+								{" "}
+								{skills} <br /> | PhotoShop | MongoDB{" "}
+							</h5>{" "}
+							<button className="btnPrimaryLight"> {children} </button>{" "}
+						</div>{" "}
+						<div className="img-container" data-aos="fade-up">
 							<img src={img} alt="model" />
-						</div>
-					</div>
-				</div>
-			</div>
+						</div>{" "}
+					</div>{" "}
+				</div>{" "}
+			</div>{" "}
 		</>
 	);
 }

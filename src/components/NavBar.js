@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from "../components/context/NavLinks";
 import { Link } from "react-router-dom";
+
 import { FiAlignCenter } from "react-icons/fi";
 
 class NavBar extends Component {

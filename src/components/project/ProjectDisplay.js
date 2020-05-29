@@ -1,12 +1,15 @@
 import React from "react";
 
+import "aos/dist/aos";
+
 export default function ProjectDisplay({ project }) {
-	const { title, description, type, image, liveDemo, gitHub, style } = project;
+	const { description, type, image, liveDemo, gitHub, style } = project;
+
 	return (
 		<section className="container">
 			<div className="grid-container">
 				<div className="card">
-					<div className="card-image">
+					<div className="card-image" data-aos="fade-up">
 						<img src={image} alt="project" />{" "}
 					</div>
 					<div className="card-text">

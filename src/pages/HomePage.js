@@ -3,6 +3,7 @@ import About from "./About";
 import Model from "../images/face.png";
 import Hero from "../components/Hero";
 import Project from "../components/project/project";
+import { Link } from "react-router-dom";
 
 export default class HomePage extends Component {
 	render() {
@@ -12,9 +13,12 @@ export default class HomePage extends Component {
 					highlight="Full Stack Web Developer"
 					name={`i'm Ralphael Oshun`}
 					skills="HTML/CSS | Bootstrap| Javascript | REACT"
-					children="view projects"
 					img={Model}
-				/>
+				>
+					<Link className="link-btn" children="view" to="/project/">
+						projects{" "}
+					</Link>{" "}
+				</Hero>
 
 				<About />
 				<Project />

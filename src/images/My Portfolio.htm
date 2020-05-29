@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:3000/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="icon" href="http://localhost:3000/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Web site created using create-react-app">
+    <link rel="apple-touch-icon" href="http://localhost:3000/logo192.png">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>My Portfolio</title>
+<style type="text/css">body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+</style><style type="text/css">@import url(https://fonts.googleapis.com/css2?family=Cabin&family=Lato&family=Montserrat:wght@300&family=Roboto:wght@700&display=swap);</style><style type="text/css">*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --mainFont: "Lato", sans-sarif;
+    --secondaryFont: "Montserrat", cursive;
+    --highlight: "Roboto", sans-sarif;
+    --bodyFont: "Cabin", sans-sarif;
+    --mainFontColorDark: #0b0b0b;
+    --mainFontColor: #515151;
+    --primaryColor: #f6f5f5;
+    --mainWhite: #ffff;
+    --offWhite: #f7f7f7;
+    --mainBlack: #1a1a1a;
+    --mainGrey: #6d6d6d;
+    --darkGrey: #403e3e;
+    --darkShadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+    --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+}
+
+body {
+    background-color: var(--primaryColor);
+    margin: 0px;
+    padding: 0px;
+    font-family: var(--mainFont);
+    color: var(--mainGrey);
+    font-size: 1.2rem;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-size: 1.6rem;
+}
+
+.link-btn {
+    color: #373636;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2.4rem;
+    justify-items: center;
+}
+
+.btnPrimaryLight {
+    width: 130px;
+    height: 42px;
+    border-radius: 10px;
+    font-family: calibiri;
+    font-weight: bold;
+    font-size: 14px;
+    outline: none;
+    margin: 0px 10px;
+    border: 2px solid #373636;
+    color: #373636;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.btnPrimaryDark {
+    width: 130px;
+    height: 42px;
+    border-radius: 10px;
+    font-family: calibiri;
+    font-weight: bold;
+    font-size: 14px;
+    outline: none;
+    margin: 0px 10px;
+    background-color: #0b0b0b;
+    color: #ffff;
+    border: none;
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(1.1);
+}
+
+section {
+    padding: 3.9rem 0;
+    width: 100%;
+    /*   background-image: url('../src/images/singleProductBcg.jpeg');  */
+}
+
+.logo {
+    font-family: var(--secondaryFont);
+    color: #000000;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+
+/*nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    background-color: #ffff;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+    padding: 0px 5%;
+    position: fixed;
+    width: 90%;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li a {
+    margin: 30px;
+    font-family: myriad pro regular;
+    color: #505050;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+*/
+
+
+/* navigation*/
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+    background-color: #ffff;
+    box-shadow: var(--darkShadow);
+    font-family: var(--mainFont);
+    position: sticky;
+    position: -webkit-sticky;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+}
+
+.nav-links a {
+    font-family: var(--mainFont);
+    color: #505050;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: capitalize;
+}
+
+.open-link {
+    font-family: var(--mainFont);
+    color: #505050;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: capitalize;
+}
+
+.toggle {
+    width: 25px;
+    height: 35px;
+    color: #505050;
+    display: none;
+}
+
+@media screen and (max-width: 1626px) {
+    .nav-links {
+        display: flex;
+        justify-content: space-around;
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 847px) {
+    .nav-links {
+        display: flex;
+        justify-content: space-around;
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        font-size: 24px;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--mainWhite);
+        align-items: center;
+        width: 30%;
+        box-shadow: var(--darkShadow);
+        transform: translateX(100%);
+    }
+    .toggle {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+.nav-active {
+    transform: translateX(0%);
+    color: white;
+    position: absolute;
+}
+
+
+/* end navigation*/
+
+
+/******************************/
+
+
+/***Her0 componenet***/
+
+.hero-container {
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    margin-top: 50px;
+}
+
+.provider {
+    width: 90%;
+    height: auto;
+    margin: auto;
+}
+
+.img-container {
+    width: 50%;
+    margin-top: 200px;
+    overflow: auto;
+    float: right;
+    text-align: center;
+    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-container img {
+    float: left;
+    border-style: solid;
+    border-left-style: none;
+    box-shadow: var(--darkShadow);
+}
+
+.text-container .highlights {
+    font-size: 22px;
+    color: var(--mainGrey);
+    padding-left: 50px;
+    margin-bottom: 10px;
+}
+
+.text-container .title-name {
+    font-size: 60px;
+    font-family: var(--highlight);
+    color: var(--mainBlack);
+    text-transform: capitalize;
+}
+
+.text-container .skills {
+    font-size: 20px;
+    padding-bottom: 10px;
+    color: var(--mainGrey);
+}
+
+.text-container {
+    width: 50%;
+    float: left;
+    background-color: var(--offWhite);
+    text-align: center;
+    padding-top: 150px;
+    margin-top: 250px;
+}
+
+@media screen and (max-width: 808px) {
+    .text-container {
+        width: 50%;
+        left: 10%;
+        padding-top: 100px;
+        margin-top: 200px;
+    }
+    .img-container img {
+        float: left;
+        border-style: none;
+        border-left-style: none;
+        box-shadow: var(--darkShadow);
+        height: 350px;
+        margin-top: 90px;
+    }
+    .text-container .highlights {
+        padding-left: 30px;
+    }
+}
+
+@media screen and (max-width: 786px) {
+    .hero-container {
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+        overflow: auto;
+        margin-top: -180px;
+    }
+    .img-container {
+        width: 100%;
+        margin-top: 20px;
+        align-items: center;
+        justify-content: center;
+        float: none;
+    }
+    .text-container {
+        width: 100%;
+    }
+    .img-container img {
+        border-style: none;
+        border-left-style: none;
+        padding-left: 70px;
+        padding-top: 10px;
+        height: 350px;
+        margin-top: 0px;
+        max-width: 100%;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+    }
+    .text-container .highlights {
+        padding-left: 30px;
+    }
+}
+
+
+/***  end of Her0 componenet***/
+
+
+/******************************/
+
+
+/**Title***/
+
+.section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding-top: 5rem;
+}
+
+.section-title h4 {
+    font-size: 4rem;
+    font-family: var(--mainFont);
+    letter-spacing: 0.5rem;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+    color: var(--mainFontColor);
+}
+
+.section-title div {
+    width: 20rem;
+    height: 15px;
+    margin: 0 auto;
+    background: var(--darkGrey);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seperator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.line {
+    width: 100%;
+    max-width: 8.4rem;
+    height: 0.25rem;
+    background-color: var(--mainGrey);
+    position: relative;
+    animation: grow 2s forwards;
+    animation-delay: 0.9s;
+}
+
+
+/**End of title */
+
+
+/******************************************/
+
+
+/***About   ***/
+
+.about-container {
+    width: 60%;
+    background-color: var(--mainWhite);
+    justify-content: center;
+    display: flex;
+    overflow: auto;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 15px 50px;
+    box-shadow: var(--darkShadow);
+}
+
+.model-body {
+    width: 50%;
+    float: left;
+}
+
+.about-text-container {
+    width: 70%;
+    float: right;
+    display: block;
+    justify-content: center;
+    display: flex;
+    overflow: auto;
+    margin: auto;
+    text-align: center;
+}
+
+.about-header {
+    font-size: 3rem;
+    text-transform: capitalize;
+    color: var(--mainFontColorDark);
+    font-family: var(--mainFont);
+}
+
+.about-wording {
+    font-size: 1.5rem;
+    font-family: var(--mainFont);
+    color: var(--mainGrey);
+    padding-top: 10px;
+}
+
+@media screen and (max-width: 1704px) {
+    .about-container {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 1407px) {
+    .about-container {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 1197px) {
+    .about-container {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 997px) {
+    .about-container {
+        width: 90%;
+    }
+    .about-text-container {
+        width: 100%;
+        justify-content: space-evenly;
+        position: relative;
+    }
+    .model-body {
+        width: 0%;
+        float: bottom;
+    }
+    .model-body img {
+        width: 0px;
+    }
+}
+
+
+/**** End of about*****/
+
+
+/*******************************/
+
+
+/****project/card container*******/
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    grid-gap: 15px;
+    padding: 20px 0;
+    margin-top: 30px;
+    width: 80%;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin-top: 20px;
+    overflow: auto;
+    margin: auto;
+}
+
+.card {
+    grid-template-areas: "image" "text" "stats";
+    font-family: var(--secondaryFont);
+    border-radius: 18px;
+    background: white;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+    font-size: 30px;
+    max-width: 410px;
+}
+
+.card-image {
+    grid-area: image;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-size: cover;
+}
+
+.card-text {
+    grid-area: text;
+    margin: 25px;
+}
+
+.card-text .date {
+    color: rgb(255, 7, 110);
+    font-size: 13px;
+    text-transform: capitalize;
+}
+
+.card-text p {
+    color: grey;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.card-text h2 {
+    margin-top: 0px;
+    font-size: 28px;
+    text-transform: capitalize;
+}
+
+.card-stats {
+    grid-area: stats;
+    display: grid;
+    font-size: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background: rgb(255, 7, 110);
+}
+
+.card-stats .stat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    color: var(--offWhite);
+}
+
+.card-stats .type {
+    font-size: 11px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.card-stats .value {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.value a {
+    color: var(--offWhite);
+}
+
+@media screen and (max-width: 1602px) {
+    .grid-container {
+        grid-gap: 5px;
+        padding: 10px 0;
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 1434px) {
+    .grid-container {
+        grid-gap: 5px;
+        padding: 10px 0;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1329px) {
+    .grid-container {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media screen and (max-width: 828px) {
+    .grid-container {
+        grid-template-columns: auto;
+    }
+}
+
+
+/*       card/ project ends   **/
+
+
+/*****************************************************/
+
+
+/******* filter page ***************/
+
+.filter-container {
+    width: 50%;
+    height: 20vh;
+    background-color: var(--mainFontColorDark);
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    margin: auto;
+    padding-top: 20px;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-column-gap: 2rem;
+    grid-row-gap: 100px;
+    box-shadow: var(--lightShadow);
+    margin-bottom: 20px;
+}
+
+.grid-container h1 {
+    color: rgb(255, 7, 110);
+    font-size: 2.5rem;
+}
+
+.search-field {
+    height: 50px;
+    padding: 10px;
+    padding-top: 10px;
+    margin-top: 10px;
+    margin-left: 15px;
+    border: none;
+    outline: none;
+    width: 250px;
+    border-radius: 15px;
+    font-family: var(--mainFont);
+}
+
+.type-container {
+    height: 50px;
+    padding: 10px;
+    padding-top: 10px;
+    margin-top: 10px;
+    margin-left: 15px;
+    border: 2px;
+    outline: none;
+    width: 250px;
+    border-radius: 15px;
+    font-family: var(--mainFont);
+}
+
+.filter-item {
+    display: block;
+    background: transparent;
+    border-radius: 0.5rem;
+    border: 2px solid var(--darkGray);
+}
+
+label {
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-left: 25px;
+    color: var(--offWhite);
+}
+
+.type-container {
+    font-size: 1.2rem;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    color: var(--mainFontColor);
+    text-transform: capitalize;
+}
+
+.checkbox label {
+    padding-right: 8px;
+    font-size: 17px;
+}
+
+@media screen and (max-width: 1714px) {
+    .filter-container {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 1487px) {
+    .filter-container {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 1139px) {
+    .filter-container {
+        width: 100%;
+    }
+    .type-container {
+        width: 150px;
+        width: 100%;
+    }
+    label {
+        font-weight: lighter;
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 881px) {
+    .filter-container {
+        display: grid;
+        height: auto;
+        grid-template-columns: auto;
+        grid-column-gap: 2rem;
+        grid-row-gap: 100px;
+        box-shadow: var(--lightShadow);
+        margin-bottom: 20px;
+        padding-top: 10px;
+        padding-bottom: 15px;
+        margin-top: 10px;
+    }
+    label {
+        font-weight: lighter;
+        text-transform: capitalize;
+        margin-left: 25px;
+        color: var(--offWhite);
+        font-size: 17px;
+    }
+}
+
+
+/**** end of filter*****/
+
+
+/**************************************/
+
+
+/***** Footer ***************/
+
+footer {
+    width: 100%;
+    background-color: var(--mainFontColorDark);
+    bottom: 0px;
+}
+
+.main-content {
+    display: flex;
+}
+
+.main-content .box {
+    flex-basis: 50%;
+    padding: 10px 20px;
+}
+
+.box h2 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.box .content {
+    margin: 20px 0 0 0;
+}
+
+.left .content p {
+    text-align: center;
+}
+
+.left .content .social {
+    margin: 20px 0 0 0;
+}
+
+.left .content .social a {
+    padding: 0 2px;
+    color: var(--mainWhite);
+}
+
+.icon {}
+
+.left .content .social .icon {
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    font-size: 18px;
+    background: #1a1a1a;
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 2px;
+    transition: .3s;
+}
+
+.left .content .social .icon:hover {
+    background: #f12020;
+}
+
+.center .content .fas .contact {
+    font-size: 1.4375rem;
+    background: var(--mainFontColorDark);
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    border-radius: 50%;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.center .content .fas .contact:hover {
+    background: #f12020;
+}
+
+.center .content .text {
+    font-size: 1.0625rem;
+    font-weight: 500;
+    padding-left: 10px;
+}
+
+.center .content .phone {
+    margin: 10px 0;
+}
+
+.text {
+    font-size: 1.0625rem;
+    margin-bottom: 2px;
+    color: #656565;
+}
+
+.right form .msg {
+    margin-top: 10px;
+}
+
+.right form input,
+.right form textarea {
+    width: 100%;
+    font-size: 1.0625rem;
+    background: #151515;
+    padding-left: 10px;
+    border: 1px solid #222222;
+}
+
+.right form input:focus,
+.right form textarea:focus {
+    outline: #3498db;
+}
+
+.right form input {
+    height: 35px;
+}
+
+
+/*
+        @media screen and (max-width:1348px) {
+            .text-container {
+                position: absolute;
+                width: 90%;
+                top: 10%;
+            }
+            .media-left {
+                width: 60%;
+            }
+            .media-right {
+                width: 40%;
+            }
+            .model {
+                height: 370px;
+                position: absolute;
+                left: 90%;
+                bottom: 0px;
+            }
+        }
+        
+        @media screen and (max-width:768px) {
+            .text-container {
+                position: absolute;
+                width: 80%;
+                top: 7%;
+                left: 0%;
+                padding-left: 35px;
+                padding-bottom: 10px;
+            }
+            .media-left {
+                width: 80%;
+                left: 0%;
+            }
+            .highlight {
+                font-size: 20px;
+            }
+            .title-name {
+                font-size: 40px;
+            }
+            .skills {
+                font-size: 20px;
+                line-height: 30px;
+                margin-bottom: 10px;
+            }
+            .media-right {
+                width: 40%;
+            }
+            .model {
+                height: 370px;
+                position: relative;
+                left: 100%;
+                bottom: 0px;
+                padding-left: 200px;
+            }
+            .btnPrimaryLight {
+                margin-bottom: 10px;
+            }
+        }*/</style><script charset="utf-8" src="./My Portfolio_files/main.89b4f70cd6f084295b8c.hot-update.js"></script><script charset="utf-8" src="./My Portfolio_files/main.aaa3b55908174ddc4b62.hot-update.js"></script><script charset="utf-8" src="./My Portfolio_files/main.65521e0f28ca6b290826.hot-update.js"></script><script charset="utf-8" src="./My Portfolio_files/main.93d557a81f5e6fb8376e.hot-update.js"></script><script charset="utf-8" src="./My Portfolio_files/main.482e112b5522fbdd2e36.hot-update.js"></script><script charset="utf-8" src="./My Portfolio_files/main.4591212ef3feba5bd098.hot-update.js"></script><script charset="utf-8" src="./My Portfolio_files/main.00c293069b19c14fceeb.hot-update.js"></script><script charset="utf-8" src="./My Portfolio_files/main.0a9bbec15d85dbfc2a6c.hot-update.js"></script><script charset="utf-8" src="./My Portfolio_files/main.ce11e9e94990e7b1a3db.hot-update.js"></script><script charset="utf-8" src="./My Portfolio_files/main.7538eeb253d9b695c65d.hot-update.js"></script><script charset="utf-8" src="./My Portfolio_files/main.be10b58695ddb2ca28c7.hot-update.js"></script><script charset="utf-8" src="./My Portfolio_files/main.b40f757f8ff20bc25ce5.hot-update.js"></script><script charset="utf-8" src="./My Portfolio_files/main.a0f6c9909c3d150db195.hot-update.js"></script><script charset="utf-8" src="./My Portfolio_files/main.4c703c1b892eb5efe227.hot-update.js"></script><script charset="utf-8" src="./My Portfolio_files/main.359a17e27130403fa164.hot-update.js"></script><script charset="utf-8" src="./My Portfolio_files/main.89f38ec49ab9662ca443.hot-update.js"></script><script charset="utf-8" src="./My Portfolio_files/main.ac109a43726b237b9b0b.hot-update.js"></script><script charset="utf-8" src="./My Portfolio_files/main.28c8f2fa302607f22999.hot-update.js"></script><script charset="utf-8" src="./My Portfolio_files/main.881126de6b7b8ba228a7.hot-update.js"></script><script charset="utf-8" src="./My Portfolio_files/main.a186d3e7fce66a18bdb3.hot-update.js"></script></head>
+
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"><div><nav class="container"><div class="logo"><h4> Ralphael </h4> </div> <ul class="nav-links"> <li><a class="open-link" href="http://localhost:3000/"> home </a> </li><li><a class="open-link" href="http://localhost:3000/project"> projects </a> </li><li><a class="open-link" href="http://localhost:3000/contact"> contact </a> </li> </ul> <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="toggle" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="18" y1="10" x2="6" y2="10"></line><line x1="21" y1="6" x2="3" y2="6"></line><line x1="21" y1="14" x2="3" y2="14"></line><line x1="18" y1="18" x2="6" y2="18"></line></svg> </nav><div><div class="container"><div class="hero-container"><div class="provider"><div class="text-container"><h2 class="highlights"> Full Stack Web Developer </h2> <h1 class="title-name"> i'm Ralphael Oshun </h1> <h5 class="skills "> HTML/CSS | Bootstrap| Javascript | REACT <br> | PhotoShop | MongoDB </h5> <button class="btnPrimaryLight"> <a class="link-btn" href="http://localhost:3000/project/">projects </a>  </button> </div> <div class="img-container"><img src="./My Portfolio_files/face.d6999b42.png" alt="model"></div> </div> </div> </div> <section class="container"><section class="container"><div class="section-title"><h4>about me</h4></div><div class="seperator"><div class="line"></div></div></section><div class="about-container"><span class="model-body"><img src="./My Portfolio_files/body.febabbb6.png" alt="model"></span><div class="about-text-container"><div class="about-text"><p class="about-header">Designer and developer</p><p class="about-wording"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos nemo adipisci amet delectus magni, cupiditate quibusdam aliquam placeat consectetur id sed molestias in aut ipsam numquam cum! Aperiam, veritatis dicta!</p></div></div></div></section><section class="container">Total:8<section class="container"><div class="section-title"><h4>projects</h4></div><div class="seperator"><div class="line"></div></div></section><div class="container"><div class="filter-container"><div><label for="type">Type</label><select name="type" id="type" class="type-container"><option value="all">all </option><option value="lifestyle">lifestyle </option><option value="e-commerce">e-commerce </option><option value="App">App </option><option value="LifeStyle">LifeStyle </option><option value="Travel">Travel </option><option value="Luxury">Luxury </option></select></div><div class="checkbox"><label for="payment">payment option</label><input type="checkbox" name="payment" id="payment"><label for="classComponent">class component</label><input type="checkbox" name="classComponent" id="classComponent"><br><label for="functionComponent">functional component</label><input type="checkbox" name="functionComponent" id="functionComponent"><label for="hooks">hooks</label><input type="checkbox" name="hooks" id="hooks"><br><label for="api">api</label><input type="checkbox" name="api" id="api"><label for="redux">redux</label><input type="checkbox" name="redux" id="redux"><br><label for="MongoDbi">MongoDbi</label><input type="checkbox" name="MongoDbi" id="MongoDbi"></div></div></div><div class="grid-container"><section class="container"><div class="grid-container"><div class="card"><div class="card-image"><img src="./My Portfolio_files/defaultBcg.bcea13ff.jpeg" alt="project"> </div><div class="card-text"><span class="date">Class component</span><h2>lifestyle</h2><p>I used class based component to build this visualling appealling website. You have options to search the products too</p></div><div class="card-stats"><div class="stat"><div class="value"><a href="https://github.com/Afoghandi/Resort-Beach-Tut.git">gitHub</a> </div><div class="type"> code</div></div><div class="stat"><div class="5123"> -click-</div><div class="views"></div></div><div class="stat"><div class="value"> <a href="https://react-beach-app-tut.netlify.app/">live</a></div><div class="type"> demo</div></div></div></div></div></section><section class="container"><div class="grid-container"><div class="card"><div class="card-image"><img src="./My Portfolio_files/hat1.25563c28.jpg" alt="project"> </div><div class="card-text"><span class="date">function component</span><h2>e-commerce</h2><p> I used function based component to build this visualling appealling website. You have options to search the products too</p></div><div class="card-stats"><div class="stat"><div class="value"><a href="https://github.com/Afoghandi/gee-swag.git">gitHub</a> </div><div class="type"> code</div></div><div class="stat"><div class="5123"> -click-</div><div class="views"></div></div><div class="stat"><div class="value"> <a href="https://gee-swag.netlify.app/">live</a></div><div class="type"> demo</div></div></div></div></div></section><section class="container"><div class="grid-container"><div class="card"><div class="card-image"><img src="data:image/jpeg;base64,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" alt="project"> </div><div class="card-text"><span class="date">Function component</span><h2>e-commerce</h2><p>This website has a paypal payment option and a form submittion as well!!. I used function based component to build this visualling appealling website. You have options to search the products too</p></div><div class="card-stats"><div class="stat"><div class="value"><a href="https://github.com/Afoghandi/tech-store.git">gitHub</a> </div><div class="type"> code</div></div><div class="stat"><div class="5123"> -click-</div><div class="views"></div></div><div class="stat"><div class="value"> <a href="https://amazontech.netlify.app/">live</a></div><div class="type"> demo</div></div></div></div></div></section><section class="container"><div class="grid-container"><div class="card"><div class="card-image"><img src="./My Portfolio_files/react.5b34a252.png" alt="project"> </div><div class="card-text"><span class="date">React Hooks</span><h2>App</h2><p>This is a staple for all react. One has to build a To do list. I used React Hooks and function based component to build this visualling appealling website. </p></div><div class="card-stats"><div class="stat"><div class="value"><a href="https://github.com/Afoghandi/to-do-list.git">gitHub</a> </div><div class="type"> code</div></div><div class="stat"><div class="5123"> -click-</div><div class="views"></div></div><div class="stat"><div class="value"> <a href="https://todo-with-huks.netlify.app/">live</a></div><div class="type"> demo</div></div></div></div></div></section><section class="container"><div class="grid-container"><div class="card"><div class="card-image"><img src="./My Portfolio_files/react.5b34a252.png" alt="project"> </div><div class="card-text"><span class="date">React Hooks</span><h2>App</h2><p>This is a staple for all react. One has to build a budget calculator. I used React Hooks and function based component to build this visualling appealling website. </p></div><div class="card-stats"><div class="stat"><div class="value"><a href="https://github.com/Afoghandi/budget-calculator.git">gitHub</a> </div><div class="type"> code</div></div><div class="stat"><div class="5123"> -click-</div><div class="views"></div></div><div class="stat"><div class="value"> <a href="https://hook-budget-calculator.netlify.app/">live</a></div><div class="type"> demo</div></div></div></div></div></section><section class="container"><div class="grid-container"><div class="card"><div class="card-image"><img src="./My Portfolio_files/react.5b34a252.png" alt="project"> </div><div class="card-text"><span class="date">Class Components</span><h2>LifeStyle</h2><p>One of my first projects I made. Had lots of fun doing it. It's simple but demonstrates the key skill I needed to continue my growth </p></div><div class="card-stats"><div class="stat"><div class="value"><a href="https://github.com/Afoghandi/budget-calculator.git">gitHub</a> </div><div class="type"> code</div></div><div class="stat"><div class="5123"> -click-</div><div class="views"></div></div><div class="stat"><div class="value"> <a href="https://city-tours-firstever.netlify.app/">live</a></div><div class="type"> demo</div></div></div></div></div></section><section class="container"><div class="grid-container"><div class="card"><div class="card-image"><img src="./My Portfolio_files/HAJJ-2018.b4d981e7.png" alt="project"> </div><div class="card-text"><span class="date">Class Components</span><h2>Travel</h2><p>Iused class based component to build this visualling appealling website. You have options to search the products too. </p></div><div class="card-stats"><div class="stat"><div class="value"><a href="https://github.com/Afoghandi/imam-travels.git">gitHub</a> </div><div class="type"> code</div></div><div class="stat"><div class="5123"> -click-</div><div class="views"></div></div><div class="stat"><div class="value"> <a href="https://www.imamtravels.com/">live</a></div><div class="type"> demo</div></div></div></div></div></section><section class="container"><div class="grid-container"><div class="card"><div class="card-image"><img src="./My Portfolio_files/blackdodge.5e57a781.jpg" alt="project"> </div><div class="card-text"><span class="date">Class Components</span><h2>Luxury</h2><p>I really went for style on this one to show case my CSS prowress. The site was built on classed based component and deployed via Netlify </p></div><div class="card-stats"><div class="stat"><div class="value"><a href="https://github.com/Afoghandi/luxury-cars.git">gitHub</a> </div><div class="type"> code</div></div><div class="stat"><div class="5123"> -click-</div><div class="views"></div></div><div class="stat"><div class="value"> <a href="https://luxury-cars.netlify.app/">live</a></div><div class="type"> demo</div></div></div></div></div></section></div></section></div> <footer class="container"><div class="main-content"><div class="left box"><h2>Ralphael</h2><div class="content"><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.Delectus, quam.Sit accusantium rerum iure impedit fugiat!Nihil quaerat illo voluptates vitae molestias, rerum numquam necessitatibus. Perferendis aut voluptas consectetur eligendi. </p><div class="social"><a href="https://www.facebook.com/" class="icon"><span class="fab"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path></svg></span></a><a href="https://www.twitter.com/" class="icon"><span class="fab"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg></span></a><a href="https://www.instagram.com/" class="icon"><span class="fab"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg></span></a><a href="https://www.youtube.com/" class="icon"><span class="fab"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg></span></a></div></div></div><div class="center box"><h2>Address</h2><div class="content"><div class="place"><span class="fas"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" class="contact" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path></svg> </span><span class="text"> Estcourt Close, Gloucester</span></div><div class="phone"><span class="fas"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="contact" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z"></path></svg> </span><span class="text"> 07584040980</span></div><div class="email"><span class="fas"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="contact" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M512 464c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V200.724a48 48 0 0 1 18.387-37.776c24.913-19.529 45.501-35.365 164.2-121.511C199.412 29.17 232.797-.347 256 .003c23.198-.354 56.596 29.172 73.413 41.433 118.687 86.137 139.303 101.995 164.2 121.512A48 48 0 0 1 512 200.724V464zm-65.666-196.605c-2.563-3.728-7.7-4.595-11.339-1.907-22.845 16.873-55.462 40.705-105.582 77.079-16.825 12.266-50.21 41.781-73.413 41.43-23.211.344-56.559-29.143-73.413-41.43-50.114-36.37-82.734-60.204-105.582-77.079-3.639-2.688-8.776-1.821-11.339 1.907l-9.072 13.196a7.998 7.998 0 0 0 1.839 10.967c22.887 16.899 55.454 40.69 105.303 76.868 20.274 14.781 56.524 47.813 92.264 47.573 35.724.242 71.961-32.771 92.263-47.573 49.85-36.179 82.418-59.97 105.303-76.868a7.998 7.998 0 0 0 1.839-10.967l-9.071-13.196z"></path></svg> </span><span class="text"> ralphaeloshun@gmail.com</span></div></div></div><div class="right box"><h2>Contact me</h2><div class="content"><form action="http://localhost:3000/#"><div class="email"><div class="text">Email</div><input type="email" required=""></div><div class="msg"><div class="text">message*</div><textarea rows="2" cols="25" required=""></textarea></div><div class="btn"><button type="submit">send</button></div></form></div></div></div></footer></div> </div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+<script src="./My Portfolio_files/bundle.js"></script><script src="./My Portfolio_files/1.chunk.js"></script><script src="./My Portfolio_files/main.chunk.js"></script><script src="./My Portfolio_files/main.77837e8b52c536bc420b.hot-update.js"></script>
+
+</body></html>

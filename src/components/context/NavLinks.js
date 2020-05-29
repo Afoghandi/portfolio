@@ -3,15 +3,16 @@ export const NavLink = [{
         name: "home",
         path: "/",
     },
+
     {
         id: 2,
-        name: "about",
-        path: "/about",
+        name: "projects",
+        path: "/project",
     },
     {
         id: 3,
-        name: "projects",
-        path: "/project",
+        name: "about",
+        path: "/about",
     },
     {
         id: 4,
